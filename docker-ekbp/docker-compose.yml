@@ -1,12 +1,13 @@
-version: '3.8'
 
 services:
   dify-external-knowledge-base-proxy:
+    container_name: dify-ekbp
+    image: dify-ekbp
     build:
-      target: dify-ekbp
       context: ..
       dockerfile: Dockerfile
     ports:
       - "${SERVER_PORT}:3000"
     env_file:
       - .env
+
