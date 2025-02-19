@@ -1,22 +1,22 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const config = require('config');
 const fs = require('fs');
 
 const app = express();
 app.use(bodyParser.json());
 
-const config = require('config');
 const _serverConfig = config.get('server');
 const serverConfig = {
-    host: process.env.SERVER_HOST || _serverConfig.host,
-    port: process.env.SERVER_PORT || _serverConfig.port
+    host: _serverConfig.host, // 该服务监听的ip
+    port: _serverConfig.port // 该服务监听的端口
 };
 
 const _ragflowConfig = config.get('ragflow');
 const ragflowConfig = {
-    host: process.env.RAGFLOW_HOST || _ragflowConfig.host,
-    port: process.env.RAGFLOW_PORT || _ragflowConfig.port
+    host: process.env.RAGFLOW_HOST || _ragflowConfig.host, // ragflow ip
+    port: process.env.RAGFLOW_PORT || _ragflowConfig.port // ragflow 端口
 };
 
 function ragflow_res_convert_2_dify_res(data) {
