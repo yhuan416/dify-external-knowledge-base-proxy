@@ -6,6 +6,11 @@ services:
     build:
       context: ..
       dockerfile: Dockerfile
+    environment:
+      - SERVER_HOST=${SERVER_HOST}
+      - SERVER_PORT=${SERVER_PORT}
+      - RAGFLOW_HOST=${RAGFLOW_HOST}
+      - RAGFLOW_PORT=${RAGFLOW_PORT}
     ports:
       - "${SERVER_PORT}:3000"
     env_file:
