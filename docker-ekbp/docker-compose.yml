@@ -11,6 +11,7 @@ services:
       - SERVER_PORT=${SERVER_PORT}
       - RAGFLOW_HOST=${RAGFLOW_HOST}
       - RAGFLOW_PORT=${RAGFLOW_PORT}
+      - PROXY_TARGET=${PROXY_TARGET}
     ports:
       - "${SERVER_PORT}:3000"
     env_file:
