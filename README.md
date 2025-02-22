@@ -14,5 +14,17 @@ docker compose build
 ``` sh
 cd docker-ekbp
 cp .env.example .env
+
+# 修改 .env 文件配置, 略
+# ...
+
+# 启动服务
 docker compose up -d
 ```
+
+## 新增代理服务模块
+
+[README.md](proxy/README.md)
+
+---
+End
